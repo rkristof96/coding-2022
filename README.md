@@ -9,3 +9,5 @@ This is in **Markdown**. I t can also do lists:
 2. like this
 
 New comment.
+
+Test commiting a new comment.
