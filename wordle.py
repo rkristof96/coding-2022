@@ -17,7 +17,7 @@ def score_word(guess, true_word):
     # algorithm works for words with the same length
     N=len(true_word)
     for position in range(N):
-        print(position, guess[position],score_letter(guess[position], position,true_word))
+        print(position, true_word[position], guess[position],score_letter(guess[position], position,true_word))
 
 score_word('AAPL', 'ABBA')
 
