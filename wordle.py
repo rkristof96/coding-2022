@@ -1,3 +1,6 @@
+USER_PROMPT = 'Guess the word: '
+
+
 def score_letter(letter, position, true_word):
 
     # for example score_letter ('A',1, 'ABBA') should be a correct position
@@ -34,7 +37,16 @@ print(message)
 # FIXME: add functions to get user inputs & read random word
 
 def get_and_score_guess(true_word):
-    guess=input('Guess the word: ')
-    print(score_word(guess, true_word))
+    guess=input(USER_PROMPT)
+    score=(score_word(guess, true_word))
+    print(len(USER_PROMPT)*''+score)
+    return score
 
-get_and_score_guess('across')
+def loop_until_success(true_word):
+    correct_guess = False
+    while not correct_guess:
+        score=get_and_score_guess(true_word)
+        if score == 6*'*':
+            correct_guess = True
+
+loop_until_success('across')
