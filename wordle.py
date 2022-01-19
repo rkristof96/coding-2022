@@ -1,3 +1,5 @@
+from random import choice
+
 USER_PROMPT = 'Guess the word: '
 
 
@@ -49,4 +51,13 @@ def loop_until_success(true_word):
         if score == 6*'*':
             correct_guess = True
 
-loop_until_success('across')
+# loop_until_success('across')
+
+def get_random_word(filename):
+    word_file=open(filename, 'r')
+    words = word_file.readlines()
+    return choice(words)
+
+
+word= get_random_word('data/words.txt')[0:6]
+print(word)
